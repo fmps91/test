@@ -1,0 +1,30 @@
+git init 
+
+git log
+
+git log --oneline
+
+combinar varios commits 
+
+git log --oneline 
+
+git rebase -i 'idcommit' = f31ddc3
+
+git rebase -i f31ddc3
+
+coge el ultimo comit que tenga le pone un tag
+git tag v1.0.0
+
+git tag v1.0.0 al commit que quiero ejemplo
+git tag v1.0.0 f44a1fd
+
+configurar editor de git
+editor actual
+git config --global --unset-all core.editor
+
+editor sublime
+ruta del editor de codigo desde el terminal probar antes la direccion del editor
+git config --global core.editor "/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text"
+
+para pushear un tag enviar cuando ya allas utilizado el tag luego escribes el siguiente comando
+git push origin --tags

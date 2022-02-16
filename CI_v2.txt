@@ -1,0 +1,34 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    env:
+      COMMENT: ""
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      id: id
+      run: |
+          docker build . --file Dockerfile --tag server:$(date +%s)
+    - name: Message success
+      if: ${{ success() }}
+      run: |
+          COMMENT="se ha creado exitosamente el build"
+    - name: Message failed
+      if: ${{ failure() }}
+      run: |
+          COMMENT="Evento: ${{ github.event_name }} User: ${{github.actor}} ha fallado la creacion de la imagen de docker"
+    - name: Discord Message
+      env:
+        DISCORD_WEBHOOK: ${{ secrets.WEBHOOK_ID }}
+      uses: Ilshidur/action-discord@0.3.2
+      if: ${{ success() || failure() }}
+      with:
+        args: ${{ env.COMMENT }}

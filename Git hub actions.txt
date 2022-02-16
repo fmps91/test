@@ -1,0 +1,11 @@
+https://docs.github.com/es/actions/using-workflows/workflow-syntax-for-github-actions
+
+tutorial
+https://docs.github.com/es/actions
+
+
+steps status
+https://stackoverflow.com/questions/57850553/github-actions-check-steps-status
+
+encript yml
+https://blog.thenets.org/how-to-commit-encrypted-files-to-git-with-mozilla-sops/xw

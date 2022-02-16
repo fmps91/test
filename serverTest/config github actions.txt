@@ -1,0 +1,41 @@
+
+lista todas las llaves ssh
+ls -al ~/.ssh  
+
+eliminar todas las ssh
+rm -rf ~/.ssh/*
+
+step 0
+
+https://www.youtube.com/watch?v=6XaZ0ryZRcY
+
+link instructions 
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
+
+step 1
+
+ssh-keygen -t ed25519 -C "fmps92@gmail.com"
+
+step 2
+
+eval "$(ssh-agent -s)"  
+
+step 3
+
+open ~/.ssh/config   
+
+step 4
+
+touch ~/.ssh/config  
+
+step 5
+
+add lines to file
+
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+
+
+

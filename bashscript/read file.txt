@@ -1,0 +1,41 @@
+#example 1
+---------------------------
+#read line for line
+filename='output.txt'
+n=1
+while read line; do
+# reading each line
+echo "Line No. $n : $line"
+n=$((n+1))
+done < $filename
+--------------------------
+
+#example 2
+---------------------------
+# declaring array list and index iterator
+#array=("$@")
+declare -A array
+i=0
+
+# reading file in row mode, insert each line into array
+while IFS= read -r line; do
+    array[$i]=$line
+    let i++
+    echo "linea: $line"
+done < "output.txt"
+
+#cicle for of array of a
+for line in "${array[*]}"
+  do
+    echo "$line"
+  done
+
+#a specific element of a array
+echo "${array[0]}"
+
+#print all elements of a array
+echo "${array[*]}"
+
+#length of array
+echo "${#array[@]}"
+---------------------------

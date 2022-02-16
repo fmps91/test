@@ -1,0 +1,117 @@
+//dependecias de desarrollo
+npm i -D @types/cors @types/express @types/morgan @types/node tsc-watch typescript
+
+//dependecias de uso
+npm i cors express morgan reflect-metadata
+
+//orm de la base de datos
+https://typeorm.io/#/
+
+comando a ejecutar
+
+npx tsc --init
+
+crear la base de datos que se configuro en ormconfig.json
+
+setencia para agregar
+{
+    "Name":"Delta",
+    "Email":"d@2.com",
+    "Pass":"d"
+}
+
+//pruebas unitarias
+npm i -D @types/jest @types/supertest jest supertest ts-node-dev ts-jest axios @babel/preset-typescript @babel/preset-env
+
+source ~/.nvm/nvm.sh
+nvm use 17.1.0
+//npm 17.1.0
+the database is in the folder docker 
+the configuration of to database is in the ormconfig.json
+//postgres 13-alpine y adminer 4.8.1
+para ejecutar el postgres.yml 
+docker-compose -f postgres.yml up
+
+
+dockerhub
+------------
+para enviarlo a dockerhub
+
+0 write comand
+docker logout
+
+1 ejecutar el Dockerfile para crear la imagen utilizas el 
+docker build -t backend .
+
+2 create repository in dockerhub "user/name"= fmps92/name
+
+3 exec comand
+docker tag backend fmps92/name:backend
+
+4 write comand and input credentials
+docker login 
+
+5 exec comand
+docker push fmps92/name:backend
+
+6 exec image of the own build for example
+docker run -it -p 3000:3000 fmps92/prueba:backend
+
+for exected locally
+
+1 create image locally
+docker build -t backend.
+
+2 exec image of the own build for example
+docker run -it -p 3000:3000 bakend
+
+fin dockerhub
+------------
+
+git
+------------
+
+global
+
+git config --global user.name "fname lname"
+git config --global user.email "example@gmail.com"
+git config --global user.password "secret"
+
+git config --list --show-origin
+
+local 
+
+git config  user.name "<username>" --replace-all
+git config  user.email "<email>" --replace-all
+
+https://Username`**:**`Password`**@**`github.com/myRepoDir/myRepo.git`
+
+git config --global credential.helper "cache --timeout=28800"
+
+git config --global --unset-all core.editor
+
+git config --global core.editor "/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
+
+git config --global core.editor "/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text"
+
+fin git
+------------
+
+configuracion de credenciasles del GCM
+------------
+
+link del instalador https://github.com/GitCredentialManager/git-credential-manager/releases/tag/v2.0.632
+
+Git Credential Manager was installed in /usr/local/share/gcm-core and configured for the current user.
+Other users
+GCM has already been automatically configured for use by the current user with Git. If other users wish to use GCM, have them run the following command to update their global Git configuration (~/.gitconfig): 
+$ git-credential-manager-core configure
+To configure GCM for all users, run the following command to update the system Git configuration: 
+$ git-credential-manager-core configure --system
+Uninstall
+If you wish to uninstall GCM, run the following script:
+$ /usr/local/share/gcm-core/uninstall.sh
+
+------------
+
+

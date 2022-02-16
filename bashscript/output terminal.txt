@@ -1,0 +1,30 @@
+
+for comands of the linux
+-----------------
+
+is:
+a = $(date)
+
+-----------------
+
+for comands not own of terminal of ubuntu
+-----------------
+
+script output.txt
+
+docker build -t --progress=plain backend .
+
+exit
+
+-----------------
+
+for comands not own of terminal of ubuntu
+-----------------
+
+script output.txt
+
+docker build -t --progress=plain backend .
+
+exit
+
+-----------------

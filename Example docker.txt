@@ -1,0 +1,32 @@
+#https://github.com/fmps91/test/new/main?filename=.github%2Fworkflows%2Fdocker-image.yml&workflow_template=docker-image
+#dddd
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: version ubuntu 
+      run: lsb_release -d
+    - name: comands
+      run: help
+    - name: comand ruta
+      run: pwd
+    - name: directories
+      run: ls -a
+    - name: change directori
+      run: cd "serverTest"
+    - name: sub directories
+      run: ls -a
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag server:$(date +%s)
