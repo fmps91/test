@@ -28,3 +28,6 @@ git config --global core.editor "/Applications/Sublime\ Text.app/Contents/MacOS/
 
 para pushear un tag enviar cuando ya allas utilizado el tag luego escribes el siguiente comando
 git push origin --tags
+
+eliminar tag en github
+git push --delete origin tagname
